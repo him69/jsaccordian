@@ -186,12 +186,12 @@ transition: all 0.3s ease;
     
     
       // Hide all AccContent elements
-      for (let i = 1; i < allAccContent.length; i++) {
+      for (let i = 0; i < allAccContent.length; i++) {
         // allAccContent[i].classList.add('d-none');
         allAccContent[i].classList.remove('show');
 
       }
-      for (let j = 1; j < arrowAnim.length; j++) {
+      for (let j = 0; j < arrowAnim.length; j++) {
         if(arrowAnim[j]===elem){
           arrowAnim[j].classList.toggle('rotate-down');
             // console.log([j]+'rotates')
