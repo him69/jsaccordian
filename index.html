@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    body {
+      background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+      background-repeat: no-repeat;
+      height: 100svh;
+    }
+
+    .imgDiv {
+      background: url(./images/bg-pattern-desktop.svg);
+      background-repeat: no-repeat;
+      background-position: -135%;
+      background-position-y: 76%;
+      background-attachment: fixed;
+      height: 100%;
+      position: relative;
+      object-fit: contain;
+      /* overflow: hidden; */
+    }
+
+    .imgDiv img {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      max-height: 100%;
+    }
+    .arrowAnim {
+  transition: transform 0.3s ease;
+}
+
+.rotate-down {
+  transform: rotate(180deg);
+}
+.AccContent{
+  height: 0;
+  overflow: hidden;
+}
+.show{
+height: 50px;
+transition: all 0.3s ease;
+}
+.contwrap{
+  height: inherit;
+}
+.container{
+  height:545px;
+}
+@media screen and (max-width: 768px) {
+  .imgDiv {
+      background: url(./images/bg-pattern-mobile.svg);
+      background-repeat: no-repeat;
+      background-position-x: center;
+      background-position-y: -16%;
+      height: 100px;
+    }
+    .imgDiv img{
+      position: static;
+      transform: translate(33%,-61%);
+    max-height: 100%;
+    width: 60%;
+    }
+    .contwrap{
+      width: 90%;
+      margin: auto;
+      height: max-content;transform: translate(10px, 27%);
+
+    }
+    .container{
+      height: max-content;
+    }
+      
+}
+  </style>
+</head>
+
+<body>
+  <div class="d-flex justify-content-center align-items-center contwrap ">
+    <div class="container p-md-0 pb-3 bg-white rounded-5 row" style="height:545px;">
+      <div class="imgDiv col-md-6 col-sm-12 p-0">
+        <div class="d-md-none d-sm-block d-block"> 
+          <img src="./images/illustration-woman-online-mobile.svg" alt="">
+        </div>
+        <img src="./images/illustration-box-desktop.svg" alt="box" class="position-absolute d-md-block d-sm-none d-none" style="top: 58%;
+        z-index: 99;
+        left: -16%;
+        transform: translate(0, -50%);">
+        <div class="overflow-hidden h-100 position-relative">
+          <img src="./images/illustration-woman-online-desktop.svg" class="position-absolute d-md-block d-sm-none d-none" alt="woman" style="left: -14%;
+        top: 50%;
+        transform: translateY(-50%)">
+        </div>
+
+      </div>
+        <div class="accorDive col-md-6 col-sm-12 align-items-center d-flex flex-column justify-content-center">
+          <h1 class="align-md-self-start align-sm-items-center">FAQ</h1>
+          <div class="AccorBox border-bottom pe-3 w-100 my-2">
+            <div class="AccorHead d-flex justify-content-between my-3">
+              <p class="m-0">How many team members can I invite?</p>
+              <img src="./images/icon-arrow-down.svg" alt="arrowicon" style="object-fit: contain;" class="arrowAnim" onclick="accordianToggle(this)">
+            </div>
+            <div class="AccContent">
+              <p>You can invite up to 2 additional users on the Free plan. There is no limit on
+                team members for the Premium plan.</p>
+            </div>
+          </div>
+          <div class="AccorBox border-bottom pe-3 w-100 my-2">
+            <div class="AccorHead d-flex justify-content-between my-3">
+              <p class="m-0"> What is the maximum file upload size?</p>
+              <img src="./images/icon-arrow-down.svg" alt="arrowicon" class="arrowAnim" style="object-fit: contain;" onclick="accordianToggle(this)">
+            </div>
+            <div class="AccContent">
+              <p>No more than 2GB. All files in your account must fit your allotted storage space.</p>
+            </div>
+          </div>
+          <div class="AccorBox border-bottom pe-3 w-100 my-2">
+            <div class="AccorHead d-flex justify-content-between my-3">
+              <p class="m-0">How do I reset my password?</p>
+              <img src="./images/icon-arrow-down.svg" alt="arrowicon" style="object-fit: contain;" class="arrowAnim" onclick="accordianToggle(this)">
+            </div>
+            <div class="AccContent">
+              <p>Click “Forgot password” from the login page or “Change password” from your profile page.
+                A reset link will be emailed to you.</p>
+            </div>
+          </div>
+          <div class="AccorBox border-bottom pe-3 w-100 my-2">
+            <div class="AccorHead d-flex justify-content-between my-3">
+              <p class="m-0">Can I cancel my subscription?</p>
+              <img src="./images/icon-arrow-down.svg" alt="arrowicon" style="object-fit: contain;" class="arrowAnim" onclick="accordianToggle(this)">
+            </div>
+            <div class="AccContent">
+              <p>Yes! Send us a message and we’ll process your request no questions asked.</p>
+            </div>
+          </div>
+          <div class="AccorBox border-bottom pe-3 w-100 my-2">
+            <div class="AccorHead d-flex justify-content-between my-3">
+              <p class="m-0">Do you provide additional support?</p>
+              <img src="./images/icon-arrow-down.svg" alt="arrowicon" style="object-fit: contain;" class="arrowAnim" onclick="accordianToggle(this)">
+            </div>
+            <div class="AccContent">
+              <p>Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+            </div>
+          </div>
+
+
+
+        </div>
+
+    </div>
+  </div>
+ 
+  <script>
+    function accordianToggle(elem) {
+      let AccContent = elem.parentElement.nextElementSibling;
+      let allAccContent = document.getElementsByClassName('AccContent');
+      let arrowAnim = document.getElementsByClassName('arrowAnim');
+    
+    
+      // Hide all AccContent elements
+      for (let i = 1; i < allAccContent.length; i++) {
+        // allAccContent[i].classList.add('d-none');
+        allAccContent[i].classList.remove('show');
+
+      }
+      for (let j = 1; j < arrowAnim.length; j++) {
+        if(arrowAnim[j]===elem){
+          arrowAnim[j].classList.toggle('rotate-down');
+            // console.log([j]+'rotates')
+        }else{
+          arrowAnim[j].classList.remove('rotate-down');
+        }
+      }
+      // Toggle visibility of the selected AccContent
+      // AccContent.classList.toggle('d-none');
+      AccContent.classList.add('show');
+    }
+  </script>
+
+ 
+</body>
+
+</html>
