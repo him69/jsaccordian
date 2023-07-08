@@ -125,7 +125,7 @@ transition: all 0.3s ease;
           <h1 class="align-md-self-start align-sm-items-center">FAQ</h1>
           <div class="AccorBox border-bottom pe-3 w-100 my-2">
             <div class="AccorHead d-flex justify-content-between my-3">
-              <p class="m-0">How many team members can I invite?</p>
+              <p class="m-0 queB">How many team members can I invite?</p>
               <img src="./images/icon-arrow-down.svg" alt="arrowicon" style="object-fit: contain;" class="arrowAnim" onclick="accordianToggle(this)">
             </div>
             <div class="AccContent">
@@ -135,7 +135,7 @@ transition: all 0.3s ease;
           </div>
           <div class="AccorBox border-bottom pe-3 w-100 my-2">
             <div class="AccorHead d-flex justify-content-between my-3">
-              <p class="m-0"> What is the maximum file upload size?</p>
+              <p class="m-0 queB"> What is the maximum file upload size?</p>
               <img src="./images/icon-arrow-down.svg" alt="arrowicon" class="arrowAnim" style="object-fit: contain;" onclick="accordianToggle(this)">
             </div>
             <div class="AccContent">
@@ -144,7 +144,7 @@ transition: all 0.3s ease;
           </div>
           <div class="AccorBox border-bottom pe-3 w-100 my-2">
             <div class="AccorHead d-flex justify-content-between my-3">
-              <p class="m-0">How do I reset my password?</p>
+              <p class="m-0 queB">How do I reset my password?</p>
               <img src="./images/icon-arrow-down.svg" alt="arrowicon" style="object-fit: contain;" class="arrowAnim" onclick="accordianToggle(this)">
             </div>
             <div class="AccContent">
@@ -154,7 +154,7 @@ transition: all 0.3s ease;
           </div>
           <div class="AccorBox border-bottom pe-3 w-100 my-2">
             <div class="AccorHead d-flex justify-content-between my-3">
-              <p class="m-0">Can I cancel my subscription?</p>
+              <p class="m-0 queB">Can I cancel my subscription?</p>
               <img src="./images/icon-arrow-down.svg" alt="arrowicon" style="object-fit: contain;" class="arrowAnim" onclick="accordianToggle(this)">
             </div>
             <div class="AccContent">
@@ -163,7 +163,7 @@ transition: all 0.3s ease;
           </div>
           <div class="AccorBox border-bottom pe-3 w-100 my-2">
             <div class="AccorHead d-flex justify-content-between my-3">
-              <p class="m-0">Do you provide additional support?</p>
+              <p class="m-0 queB">Do you provide additional support?</p>
               <img src="./images/icon-arrow-down.svg" alt="arrowicon" style="object-fit: contain;" class="arrowAnim" onclick="accordianToggle(this)">
             </div>
             <div class="AccContent">
@@ -183,6 +183,7 @@ transition: all 0.3s ease;
       let AccContent = elem.parentElement.nextElementSibling;
       let allAccContent = document.getElementsByClassName('AccContent');
       let arrowAnim = document.getElementsByClassName('arrowAnim');
+      let queB = document.getElementsByClassName('queB');
     
     
       // Hide all AccContent elements
@@ -197,6 +198,14 @@ transition: all 0.3s ease;
             // console.log([j]+'rotates')
         }else{
           arrowAnim[j].classList.remove('rotate-down');
+        }
+      }
+      for (let j = 0; j < queB.length; j++) {
+        if(queB[j]===elem){
+          queB[j].style.fontWeight = "900";
+            // console.log([j]+'rotates')
+        }else{
+          queB[j].style.fontWeight = "300";
         }
       }
       // Toggle visibility of the selected AccContent
